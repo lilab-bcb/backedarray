@@ -1,0 +1,90 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "backedarray"
+description = "Sparse and dense arrays backed by on-disk storage in Zarr or HDF5"
+readme = "README.rst"
+authors = [
+    { name = "Joshua Gould" },
+]
+
+license = { file = "LICENSE" }
+dynamic = ["version"]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+requires-python = ">=3.7"
+dependencies = [
+    "h5py",
+    "numpy",
+    "scipy",
+    "zarr"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.github",
+    "/docs",
+    "tests"
+]
+
+[tool.hatch.build.targets.wheel]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.black]
+line-length = 100
+include = "\\.pyi?$"
+
+[tool.docformatter]
+include = "\\.pyi?$"
+
+[tool.isort]
+profile = "black"
+length_sort_straight = true
+line_length = 100
+lines_after_imports = 2
+
+[tool.flake8]
+max-line-length = 100
+include = "\\.pyi?$"
+ignore = [
+    "E731", # Do not assign a lambda expression, use a def
+    "E203", # whitespace before ":"
+    "W503", # line break before binary operator ==
+    "E501", # Line too long (82 > 79 characters)
+    "E722", # Do not use bare except, specify exception instead
+]
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+testpaths = ["backedarray"]
+xfail_strict = true
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+log_cli = true
+log_cli_level = "INFO"
