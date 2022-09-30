@@ -6,6 +6,13 @@ Sparse (csc and csr) and dense arrays backed by on-disk storage in Zarr_ or HDF5
 Allows accessing slices of larger than memory arrays.
 Inspired by h5sparse_.
 
+Installation
+------------
+
+.. code:: ipython3
+
+    pip install backedarray
+    
 Examples
 --------
 
