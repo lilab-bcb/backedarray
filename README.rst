@@ -2,9 +2,9 @@
 backedarray
 ==============
 
-Sparse (csc and csr) and dense arrays backed by on-disk storage in Zarr_ or HDF5_.
+Sparse csc and csr arrays backed by on-disk storage in Zarr_ or HDF5_.
 Allows accessing slices of larger than memory arrays.
-Inspired by h5sparse_.
+Inspired by h5sparse_ and anndata_.
 
 Installation
 ------------
@@ -275,3 +275,4 @@ Read h5ad files created using `anndata <https://anndata.readthedocs.io/>`__
 .. _Zarr: https://zarr.readthedocs.io/
 .. _HDF5: https://www.hdfgroup.org/solutions/hdf5
 .. _h5sparse: https://github.com/appier/h5sparse
+.. _anndata: https://anndata.readthedocs.io
