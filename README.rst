@@ -12,7 +12,7 @@ Installation
 .. code:: ipython3
 
     pip install backedarray
-    
+
 Examples
 --------
 
