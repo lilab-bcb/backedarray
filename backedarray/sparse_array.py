@@ -7,6 +7,7 @@ See the copyright and license note in this directory source code.
 .. _h5sparse: https://github.com/appier/h5sparse
 .. _Appier Inc.: https://www.appier.com/
 """
+
 from typing import NamedTuple, Tuple, Union
 
 import numpy as np
